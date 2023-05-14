@@ -11,7 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-zipkin-sleuth:unknown" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-zipkin-sleuth:2021.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-sleuth:3.1.7" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.7.11" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.27" level="project" />
