@@ -1,7 +1,7 @@
 package com.shoppingcart.OrderService.external.decoder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shoppingcart.OrderService.exception.OrderServiceCustomException;
+import com.shoppingcart.OrderService.exception.CustomException;
 import com.shoppingcart.OrderService.external.response.ErrorResponse;
 import feign.Response;
 import feign.codec.ErrorDecoder;
@@ -21,13 +21,13 @@ public class CustomErrorDecoder implements ErrorDecoder {
         try {
             ErrorResponse errorResponse
                     = objectMapper.readValue(response.body().asInputStream(),ErrorResponse.class);
-            return new OrderServiceCustomException(
+            return new CustomException(
                     errorResponse.getErrorMessage(),
                     errorResponse.getErrorCode(),
                     response.status()
                     );
         } catch (IOException e) {
-            throw new OrderServiceCustomException("Internal Server Error","INTERNAL SERVER ERROR",500);
+            throw new CustomException("Internal Server Error","INTERNAL SERVER ERROR",500);
         }
 
     }
