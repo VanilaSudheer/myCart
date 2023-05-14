@@ -22,7 +22,14 @@ public class PaymentController {
                 HttpStatus.OK
         );
     }
+    @GetMapping("/order/{orderId}")
+    public ResponseEntity<PaymentResponse> getPaymentDetailsByOrderId(@PathVariable String orderId) {
+        return new ResponseEntity<>(
+                paymentService.getPaymentDetailsByOrderId(orderId),
+                HttpStatus.OK
+        );
+    }
 
-   
+
 
 }

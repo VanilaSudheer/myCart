@@ -4,4 +4,5 @@ import com.myCart.PaymentService.model.PaymentRequest;
 
 public interface PaymentService {
     long doPayment(PaymentRequest paymentRequest);
+    PaymentResponse getPaymentDetailsByOrderId(String orderId);
 }

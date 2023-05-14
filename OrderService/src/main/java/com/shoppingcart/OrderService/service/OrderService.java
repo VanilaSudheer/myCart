@@ -7,5 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface OrderService {
     Long placeOrder(OrderRequest orderRequest);
+    OrderResponse getOrderDetails(long orderId);
 }
 

@@ -36,6 +36,25 @@ public class PaymentServiceImpl implements PaymentService {
 
         return transactionDetails.getId();
     }
+    @Override
+    public PaymentResponse getPaymentDetailsByOrderId(String orderId) {
+        log.info("Getting payment details for the Order Id: {}", orderId);
+
+        TransactionDetails transactionDetails
+                = transactionDetailsRepository.findByOrderId(Long.valueOf(orderId));
+
+        PaymentResponse paymentResponse
+                = PaymentResponse.builder()
+                .paymentId(transactionDetails.getId())
+                .paymentMode(PaymentMode.valueOf(transactionDetails.getPaymentMode()))
+                .paymentDate(transactionDetails.getPaymentDate())
+                .orderId(transactionDetails.getOrderId())
+                .status(transactionDetails.getPaymentStatus())
+                .amount(transactionDetails.getAmount())
+                .build();
+
+        return paymentResponse;
+    }
 
 
 }
